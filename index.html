@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoFlow</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="todo-card">
+        <header class="app-header">
+          <div>
+            <p class="eyebrow">Productivity</p>
+            <h1>TodoFlow</h1>
+          </div>
+          <div class="task-counter" id="taskCounter">0 tasks</div>
+        </header>
+
+        <form id="todoForm" class="todo-form">
+          <label class="sr-only" for="todoInput">Add a task</label>
+          <input
+            id="todoInput"
+            type="text"
+            placeholder="What needs to be done?"
+            autocomplete="off"
+            maxlength="120"
+          />
+          <button type="submit" class="primary-btn">Add Task</button>
+        </form>
+
+        <div class="toolbar">
+          <div class="filters" aria-label="Filter tasks">
+            <button class="filter-btn active" data-filter="all" type="button">All</button>
+            <button class="filter-btn" data-filter="active" type="button">Active</button>
+            <button class="filter-btn" data-filter="completed" type="button">Completed</button>
+          </div>
+
+          <button id="clearCompleted" class="ghost-btn" type="button">Clear completed</button>
+        </div>
+
+        <ul id="todoList" class="todo-list" aria-live="polite"></ul>
+
+        <div class="status-bar">
+          <span id="remainingCount">0 remaining</span>
+          <span id="completedCount">0 completed</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
